@@ -1,0 +1,1016 @@
+body, html {
+  height: 100%;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent side-scrolling */
+}
+
+.kumar-one-regular {
+  font-family: "Kumar One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+/* Ensure Navbar is Fixed */
+.w3-top {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Default: Menu is Hidden */
+.w3-hide {
+  display: none;
+}
+
+/* Dropdown Menu Styling */
+#mobileMenu {
+  position: absolute;
+  top: 40px; /* Space below menu button */
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Button Styling */
+.w3-button {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+/* Responsive Design for Large Screens: Keep Original Layout */
+@media screen and (min-width: 516px) {
+  #mobileMenu {
+    display: flex !important; /* Ensure menu stays open on big screens */
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+  }
+  
+  .w3-row {
+    display: none; /* Hide the MENU button */
+  }
+}
+
+
+
+
+
+
+
+
+.w3-button.w3-block.w3-black {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("assets/images_main/SpardhaPoster.png");
+  min-height: 180%;
+  margin-top: 40px;
+}
+
+/* For screens with width less than 825px */
+@media (max-width: 800px) {
+  .bgimg {
+    min-height: 140%;
+  }
+}
+@media (max-width: 625px) {
+  .bgimg {
+    min-height: 120%;
+  }
+}
+@media (max-width: 548px) {
+  .bgimg {
+    min-height: 100%;
+  }
+}
+@media (max-width: 452px) {
+  .bgimg {
+    min-height: 80%;
+  }
+}
+
+.countdown-container {
+    position: relative;
+    padding: 120px 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    text-align: center;
+}
+
+.header-logo-container {
+  position: absolute;
+  top: 20px; /* Adjust the distance from the top */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* Add spacing from the edges */
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+.header-logo-container img {
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 80px; /* Adjust logo size */
+  max-width: 150px; /* Prevent overly large images */
+  transform: scale(1.75);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    /* flex: 1 1 80px; */
+}
+
+@keyframes vertical-scroll {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-100%);
+  }
+}
+
+.count {
+  font-size: 50px;
+  font-weight: bold;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1em; /* Height of a single digit */
+  position: relative;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.count span {
+  display: inline-block;
+  transform: translateY(0); /* Starting position */
+  transition: transform 0.1s ease-in-out; /* Adjust duration to match JavaScript */
+}
+
+.label {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  display: block;
+}
+
+.stop-animation {
+  animation: none !important; /* Stop the animation when the final value is set */
+}
+
+
+
+
+
+
+
+.events-container {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  /* Centering */
+  margin: 0px auto;  /* Auto for left & right margins centers it */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+  padding: 20px 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  background: #d1c5b0;
+  border-radius: 10px;
+  width: 97%;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  max-width: 50%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.tab.active {
+  background: #f18c29;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.events-content {
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+/* Event List */
+.event-list {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.event-list.active {
+  display: flex;
+}
+
+.event-card {
+  flex: 1 1 calc(50% - 10px);
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: medium;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card i {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #8b725e;
+}
+
+.event-card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.event-card p {
+  font-size: 12px;
+  color: #777;
+}
+
+.bgmi {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+h1 {
+  font-size: 48px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: orange;
+  text-transform: uppercase;
+} 
+
+#about {
+background-color: black;
+color: white;
+padding-top: 30px;
+padding-bottom: 80px;
+}
+
+@media screen and (max-width: 100%) {
+  #about .w3-content > div {
+      flex-direction: column;
+  }
+
+  #about .w3-content > div > div:first-child {
+      width: 100%;
+      margin-bottom: 2rem;
+  }
+}
+
+/* About Content - Default: Side-by-Side Layout */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Styling */
+.about-image {
+  flex: 0 0 300px; /* Fix image size */
+  max-width: 100%;
+  text-align: center; /* Ensures center alignment */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block; /* Prevents extra spaces */
+}
+
+/* Text Styling */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* RESPONSIVENESS */
+@media screen and (max-width: 652px) {
+  .about-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .about-image {
+    flex: none;
+    width: 80%; /* Make the image take 80% width */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .about-image img {
+    margin: auto; /* Centers the image */
+  }
+
+  .about-text {
+    text-align: justify; /* Improve readability */
+    padding: 10px; /* Add space around text */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Gallery Container */
+.gallery {
+  display: flex;
+  flex-direction: column; /* Arrange text above carousel */
+  align-items: center; /* Center both title and slider */
+  width: 100%;
+  background: linear-gradient(135deg, #2d2a4d, #0d0d0d); /* Optional, adjust as per theme */
+}
+
+/* Title Styling */
+.carousel-title {
+  margin: 0; /* Remove margin for title */
+  padding: 20px 0; /* Add space for the title */
+  font-size: 1.5rem; /* Adjust font size */
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+/* Slider Container */
+.slider {
+  background: linear-gradient(135deg, #2d2a4d, #0d0d0d);
+  padding: 20px; /* Padding around the carousel */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box; /* Keeps padding inside width */
+}
+
+/* Scrolling Track */
+.slide-track {
+  display: flex;
+  width: calc(500px * 18); /* Double the slides for seamless effect */
+  animation: scroll 40s linear infinite; /* Adjust speed for smooth scrolling */
+}
+
+/* Individual Slide */
+.slide {
+  width: 500px;
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 10px; /* Space between images */
+}
+
+/* Slide Images */
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-500px * 9)); } /* Move exactly half for infinite effect */
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 768px) {
+  .slide {
+    width: 300px; /* Adjust slide size for smaller screens */
+  }
+
+  .slide-track {
+    width: calc(300px * 18); /* Adjust for seamless effect */
+    animation: scroll 40s linear infinite;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-300px * 9)); }
+  }
+}
+
+/* Gradient Overlay for Slide */
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgb(86, 85, 85) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 1000px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .header-logo-container img {
+    transform: scale(1.5);
+  }
+
+  .count {
+    font-size: 36px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .footer-center img{
+    transform: scale(1.5);
+  }
+
+  .label{
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .w3-center img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-logo-container img {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+    transform: scale(1.25);
+  }
+
+  .count {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .label {
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #about {
+    padding: 20px 10px;
+  }
+
+  .tablink {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .footer-center img{
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 60px;
+    transform: scale(1.25);
+  }
+
+  .w3-center img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 625px) {
+  .countdown-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .w3-button.w3-block.w3-black {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .header-logo-container img {
+    height: 40px;
+    transform: scale(1);
+  }
+
+  .countdown-container {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .count {
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .label {
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .tablink {
+    font-size: 12px;
+  }
+
+  .slide img {
+    transform: scale(0.9);
+  }
+
+  .slider::before,
+  .slider::after {
+    width: 80px;
+  }
+
+  .footer-center img {
+    height: 60px;
+    transform: scale(1);
+  }
+
+  .w3-center img {
+    height: 80px;
+  }
+}
+
+
+
+
+
+
+/* Style for the rulebook button */
+.w3-button.w3-orange {
+    background-color: #f18c29; /* Theme-matching orange */
+    color: white;
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.w3-button.w3-round {
+    border-radius: 8px; /* Rounded corners */
+}
+
+.w3-center img{
+  height: 180px;
+}
+
+
+
+
+
+/* Scrolling Banner */
+.register-now-banner {
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  padding: 10px 0;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+}
+
+/* Container to hold duplicate text */
+.scroll-container {
+  display: flex;
+  width: max-content;
+  animation: scroll 10s linear infinite;
+}
+
+/* Scrolling text */
+.scroll-text {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding: 0 10px; /* Prevents text from sticking */
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* Moves only half, creating a seamless loop */
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 768px) {
+  .scroll-text {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background: #0d0d0d;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row; /* Default: Row layout */
+  align-items: center; /* Ensures vertical alignment */
+  flex-wrap: wrap;
+  margin: 0 auto; /* Center the container */
+  /*max-width: 1200px;  Restrict max width */
+  padding: 0; /* Remove extra padding */
+}
+
+.footer-left{
+  text-align: left;
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px; /* Adjusted to reduce empty space */
+  margin: 0; 
+}
+
+.footer-center img {
+  max-height: 150px; 
+  margin: 0 auto;
+  display: block;
+  Transform: scale(1.75);
+}
+
+.footer-right {
+  text-align: right;
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-left h3, .footer-right h3 {
+  font-weight: bold;
+}
+
+.footer-center h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 515px) {
+  .footer-container {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .footer-left, 
+  .footer-center, 
+  .footer-right {
+    width: 100%; /* Full width */
+  }
+
+  .footer-right {
+    padding-right: 20px; /* Remove extra right padding for mobile */
+    text-align: right; /* Center-align text */
+  }
+}
+
+
+/* Google Maps */
+#map-large {
+  display: block; /* Show by default */
+}
+
+#map-small {
+  display: none; /* Hide by default */
+}
+
+
+/* Sponsors Section */
+/* .sponsors-section {
+  background: white;
+  color: black;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.sponsors-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.sponsors-slider {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sponsor-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out; */
+  /* width: calc(300%); /* Make it wide enough for all slides */
+/* }
+
+.sponsor { */
+  /*flex: 0 0 calc(100% / 10); /* Show 3 logos at a time */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.sponsor img {
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+} */
+
+/* Optional: Add space between sponsor logos */
+/* .sponsor:not(:last-child) {
+  margin-right: 20px;
+} */
+
+
+
+
+
+
+
+
+
+
+/* Meet the Team Section */
+.meet-the-team {
+  background: linear-gradient(135deg, #2d2a4d, #0d0d0d);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.meet-the-team h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.team-section {
+  margin-top: 40px;
+}
+
+.team-section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: orange;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.team-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.team-card h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+.team-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* Loader Overlay */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000; /* Change as per theme */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#ball,
+#bat {
+    position: absolute;
+}
+
+/* Responsive Ball */
+#ball {
+    width: 5vw;  /* Relative to viewport width */
+    height: 5vw; /* Maintain aspect ratio */
+    min-width: 20px;  /* Ensuring it's not too small */
+    min-height: 20px;
+    max-width: 25px;  /* Prevents it from getting too large */
+    max-height: 25px;
+    left: 47%;
+    top:  51%;
+    z-index: 2;
+    animation: bounceBall 1s infinite;
+    animation-delay: 1s;
+}
+
+/* Responsive Bat */
+#bat {
+    width: 10vw;  /* Relative to viewport width */
+    min-width: 60px;  /* Ensuring visibility on smaller screens */
+    max-width: 100px; /* Prevents excessive scaling */
+    z-index: 1;
+    transform: rotateX(-40deg);
+    animation: moveBat 1s infinite;
+}
+
+/* Bounce animation for the ball */
+@keyframes bounceBall {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0);
+    }
+
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -8vh, 0); /* Uses viewport height for responsiveness */
+    }
+
+    70% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -4vh, 0);
+    }
+
+    90% {
+        transform: translate3d(0, -1vh, 0);
+    }
+}
+
+/* Bat Swing Animation */
+@keyframes moveBat {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    33% {
+        transform: rotateX(-25deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/* Bat Swing */
+@keyframes swingBat {
+  0%, 100% {
+      transform: rotate(-10deg);
+  }
+  50% {
+      transform: rotate(10deg);
+  }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 800px) {
+    #ball {
+        width: 2vw; 
+        height: 2vw;
+        min-width: 15px; /* Adjust for very small screens */
+        min-height: 15px;
+        left: 44%;
+        top:  51%;
+    }
+
+    #bat {
+        width: 12vw; 
+        min-width: 50px;
+    }
+}
